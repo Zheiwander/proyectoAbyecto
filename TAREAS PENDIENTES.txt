@@ -1,0 +1,2 @@
+- Arreglar objetos (Isma)
+- Pasar modelo E-R a inglés

@@ -28,8 +28,8 @@
  * 
 */
 
-function episodeObj ()
-{
+function episodeObj () {
+
 	//Attributes declaration
 	this.episodeId;
 	this.nameSeries;
@@ -38,12 +38,8 @@ function episodeObj ()
 	this.episodeName;
 	this.releaseDate;
 	
-
-		
-	
 	//Methods declaration
-	this.construct = function (id,name,surname,firstAddress,secondAddress, city, state, postalCode, numOfAdults, numOfChildren, phone, email, roomPreference, checkInDate, checkOutDate, checkInTime, checkOutTime, specialRequests, specialInstructions)
-	{
+	this.construct = function (episodeId, nameSeries, episodeNumber, rating, episodeName, releaseDate) {
 		this.setId(id);
 		this.setName(name);
 		this.setSurname(surname);
