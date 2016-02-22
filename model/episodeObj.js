@@ -18,10 +18,10 @@
 function episodeObj () {
 
 	// Attributes declaration
-	this.episodeId;		// Key, unique, no null
-	this.seriesId;		// Foreign key, unique, no null
-	this.episodeNumber;	// Unique, no null
-	this.rating;
+	this.episodeId;     // Primary key, unique, no null
+	this.seriesId;      // Foreign key, unique, no null
+	this.episodeNumber; // Unique, no null
+	this.rating;        // Not used yet
 	this.episodeName;
 	this.releaseDate;
 	
@@ -35,7 +35,7 @@ function episodeObj () {
 		this.setReleaseDate(releaseDate);
 	}
 	
-	// Accessors methods
+	// Access methods
 	this.setEpisodeId = function(episodeId) { this.episodeId = episodeId; }
 	this.setSeriesId = function(seriesId) { this.seriesId = seriesId; }
 	this.setEpisodeNumber = function(episodeNumber) { this.episodeNumber = episodeNumber; }
@@ -50,6 +50,7 @@ function episodeObj () {
 	this.getEpisodeName = function() { return this.episodeName; }
 	this.getReleaseDate = function() { return this.releaseDate; }
 	
+	// Other methods
 	this.validate = function () {
 		var errors = new Array();
 		
@@ -90,6 +91,6 @@ function episodeObj () {
 		episodeString += " RATING=" + this.getRating();
 		episodeString += " EPISODE_NAME=" + this.getEpisodeName();
 		episodeString += " RELEASE_DATE=" + this.getReleaseDate();
-		return reservationString;
+		return episodeString;
 	}
 }
