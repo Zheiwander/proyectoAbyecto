@@ -1,161 +1,95 @@
-/* @reservationObj()
- * @author: Irene Blanco Fabregat	
- * @date: 02/02/2015
- * @description: Object review
+/** @episodeObj()
+ * @author: Andreu Ferré & Ismael Gómez
+ * @date: 22/02/2016
+ * @description: Object episode
  * @Attributes:
- * 		id: id for the reservation
-		name: first name for the reservation
-		surname: last name for the reservation
-		firstAddress;
-		secondAddress;
-		city;
-		state;
-		postalCode;
-		numOfAdults;
-		numOfChildren;
-		phone;
-		email;
-		roomPreference;
-		checkInDate;
-		checkOutDate;
-		checkInTime;
-		checkOutTime;
-		specialInstructions;
+		episodeId:     ID of the episode.
+		seriesId:      ID of the series that containing this episode.
+		episodeNumber: Season and number of the episode.
+		rating:        Rating of the episode.
+		episodeName:   Name of the episode.
+		releaseDate:   Release date of the episode.
  * @methods:
- * 		construct
- * 		set's and get's foor each attribute
- * 		toString(): transforms an object to well formated string with the attributes
- * 
-*/
+		construct: Constructor of the episode object.
+		accessors: Getters and setters of the class attributes.
+		toString:  Transforms an object to well formated string with the attributes.
+ */
 
 function episodeObj () {
 
-	//Attributes declaration
-	this.episodeId;
-	this.nameSeries;
-	this.episodeNumber;
+	// Attributes declaration
+	this.episodeId;		// Key, unique, no null
+	this.seriesId;		// Foreign key, unique, no null
+	this.episodeNumber;	// Unique, no null
 	this.rating;
 	this.episodeName;
 	this.releaseDate;
 	
-	//Methods declaration
-	this.construct = function (episodeId, nameSeries, episodeNumber, rating, episodeName, releaseDate) {
-		this.setId(id);
-		this.setName(name);
-		this.setSurname(surname);
-		this.setFirstAddress(firstAddress);
-		this.setSecondAddress(secondAddress);
-		this.setCity(city);
-		this.setState(state);
-		this.setPostalCode(postalCode);
-		this.setNumOfAdults(numOfAdults);
-		this.setNumOfChildren(numOfChildren);
-		this.setPhone(phone);
-		this.setEmail(email);
-		this.setRoomPreference(roomPreference);
-		this.setCheckInDate(checkInDate);
-		this.setCheckOutDate(checkOutDate);
-		this.setCheckInTime(checkInTime);
-		this.setCheckOutTime(checkOutTime);
-		this.setSpecialRequests(specialRequests);
-		this.setSpecialInstructions(specialInstructions);
-
+	// Constructor method
+	this.construct = function (episodeId, seriesId, episodeNumber, rating, episodeName, releaseDate) {
+		this.setEpisodeId(episodeId);
+		this.setSeriesId(seriesId);
+		this.setEpisodeNumber(episodeNumber);
+		this.setRating(rating);
+		this.setEpisodeName(episodeName);
+		this.setReleaseDate(releaseDate);
 	}
 	
-	this.setId = function (id){this.id=id;}
-	this.setName = function (name){this.name=name;}
-	this.setSurname = function (surname){this.surname=surname;}
-	this.setFirstAddress = function (firstAddress){this.firstAddress=firstAddress;}
-	this.setSecondAddress = function (secondAddress){this.secondAddress=secondAddress;}
-	this.setCity = function (city){this.city=city;}
-	this.setState = function (state){this.state=state;}
-	this.setPostalCode = function (postalCode){this.postalCode=postalCode;}
-	this.setNumOfAdults = function (numOfAdults){this.numOfAdults=numOfAdults;}
-	this.setNumOfChildren = function (numOfChildren){this.numOfChildren=numOfChildren;}
-	this.setPhone = function (phone){this.phone=phone;}
-	this.setEmail = function (email){this.email=email;}
-	this.setRoomPreference = function (roomPreference){this.roomPreference=roomPreference;}
-	this.setCheckInDate = function (checkInDate){this.checkInDate=checkInDate;}
-	this.setCheckOutDate = function (checkOutDate){this.checkOutDate=checkOutDate;}
-	this.setCheckInTime = function (checkInTime){this.checkInTime=checkInTime;}
-	this.setCheckOutTime = function (checkOutTime){this.checkOutTime=checkOutTime;}
-	this.setSpecialRequests = function (specialRequests){this.specialRequests=specialRequests;}
-	this.setSpecialInstructions = function (specialInstructions){this.specialInstructions=specialInstructions;}
+	// Accessors methods
+	this.setEpisodeId = function(episodeId) { this.episodeId = episodeId; }
+	this.setSeriesId = function(seriesId) { this.seriesId = seriesId; }
+	this.setEpisodeNumber = function(episodeNumber) { this.episodeNumber = episodeNumber; }
+	this.setRating = function(rating) { this.rating = rating; }
+	this.setEpisodeName = function(episodeName) { this.episodeName = episodeName; }
+	this.setReleaseDate = function(releaseDate) { this.releaseDate = releaseDate; }
 	
-	this.addSpecialRequests = function (specialreq)
-	{
-		this.specialRequests.push(specialreq);
-	}
+	this.getEpisodeId = function() { return this.episodeId; }
+	this.getSeriesId = function() { return this.seriesId; }
+	this.getEpisodeNumber = function() { return this.episodeNumber; }
+	this.getRating = function() { return this.rating; }
+	this.getEpisodeName = function() { return this.episodeName; }
+	this.getReleaseDate = function() { return this.releaseDate; }
 	
-	this.removeSpecialRequests = function (specialreq)
-	{
-		for (var i = 0; i < this.getSpecialRequests().length; i++)
-		{
-			if(this.getSpecialRequests()[i]==specialreq)
-			{
-				this.specialRequests.splice(i,1);
-				break;
-			}		
-		}
-		
-	}
-	
-	this.getId = function () {return this.id;}
-	this.getName = function () {return this.name;}
-	this.getSurname = function () {return this.surname;}
-	this.getFirstAddress = function () {return this.firstAddress;}
-	this.getSecondAddress = function () {return this.secondAddress;}
-	this.getCity = function () {return this.city;}
-	this.getState = function () {return this.state;}
-	this.getPostalCode = function () {return this.postalCode;}
-	this.getNumOfAdults = function () {return this.numOfAdults;}
-	this.getNumOfChildren = function () {return this.numOfChildren;}
-	this.getPhone = function () {return this.phone;}
-	this.getEmail = function () {return this.email;}
-	this.getRoomPreference = function () {return this.roomPreference;}
-	this.getCheckInDate = function () {return this.checkInDate;}
-	this.getCheckOutDate = function () {return this.checkOutDate;}
-	this.getCheckInTime = function () {return this.checkInTime;}
-	this.getCheckOutTime = function () {return this.checkOutTime;}
-	this.getSpecialRequests = function () {return this.specialRequests;}
-	this.getSpecialInstructions = function () {return this.specialInstructions;}
-	
-	this.validate = function ()
-	{
+	this.validate = function () {
 		var errors = new Array();
 		
-		try
-		{
-			if(this.getName().length == 0 || this.getName().match(/^[A-ZÑ][a-zA-Zñá-ú\s]+$/)==null)
-			{
-				errors.push("Name must be informed and contain only letters");
+		// episodeId
+		try {
+			if (this.getEpisodeId().length == 0) {
+				errors.push("Episode ID must be informed.");
 			}
+		} catch (e) {
+			errors.push("Episode ID must be informed.");
 		}
-		catch(e) {
-			errors.push("Name must be informed and contain only letters");
-		}
-		
-		try
-		{
-			if(this.getSurname().length == 0)
-			{
-				errors.push("Surname must be informed and contain only letters");
+
+		// seriesId
+		try {
+			if (this.getSeriesId().length == 0) {
+				errors.push("Series ID must be informed.");
 			}
+		} catch (e) {
+			errors.push("Series ID must be informed.");
 		}
-		catch(e) {
-			errors.push("Surname must be informed and contain only letters");
+
+		// episodeNumber
+		try {
+			if (this.getEpisodeNumber().length == 0 || this.getEpisodeNumber().match(/^[0-9]{1,2}[x]{1}[0-9]{1,3}$/) == null) {
+				errors.push("Episode number must be correctly informed.");
+			}
+		} catch (e) {
+			errors.push("Episode number must be correctly informed.");
 		}
 		
 		return errors;
 	}
 	
 	this.toString = function (){
-		var reservationString ="RESERVATION - ID="+this.getId()+" FIRST NAME="+this.getName()+" LAST NAME="+this.getSurname();
-		reservationString +=" FIRST ADDRESS="+this.getFirstAddress()+" SECOND ADDRESS="+this.getSecondAddress()+" CITY="+this.getCity();
-		reservationString +=" STATE="+this.getState()+" POSTAL CODE="+this.getPostalCode()+" ADULTS="+this.getNumOfAdults();
-		reservationString +=" CHILDREN="+this.getNumOfChildren()+" PHONE="+this.getPhone()+" EMAIL="+this.getEmail();
-		reservationString +=" ROOM PREF="+this.getRoomPreference()+" CHECK IN DATE="+this.getCheckInDate()+" CHECK OUT DATE="+this.getCheckOutDate();
-		reservationString +=" CHECK IN TIME="+this.getCheckInTime()+" CHECK OUT TIME="+this.getCheckOutTime()+" SPECIAL REQ="+this.getSpecialRequests()+" SPECIAL INS="+this.getSpecialInstructions();
-		return reservationString;		
+		var episodeString ="EPISODE_ID=" + this.getEpisodeId();
+		episodeString += " SERIES_ID=" + this.getSeriesId();
+		episodeString += " EPISODE_NUMBER=" + this.getEpisodeNumber();
+		episodeString += " RATING=" + this.getRating();
+		episodeString += " EPISODE_NAME=" + this.getEpisodeName();
+		episodeString += " RELEASE_DATE=" + this.getReleaseDate();
+		return reservationString;
 	}
 }

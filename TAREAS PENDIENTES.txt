@@ -1,2 +1,3 @@
 - Arreglar objetos (Isma)
+- Arreglar comentarios (Isma)
 - Pasar modelo E-R a inglés
