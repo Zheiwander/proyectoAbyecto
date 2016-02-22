@@ -1,6 +1,6 @@
 /* @commentObj()
  * @author: Andreu Ferré & Ismael Gómez	
- * @date: 22/02/2016
+ * @date: 22/02/2016 
  * @description: Comment object
  * @Attributes:
  * 		commentId: id for the comment
