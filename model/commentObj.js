@@ -10,9 +10,10 @@
 		positiveVotes: The positive votes that the comment provoked.
 		negativeVotes: The negative votes that the comment provoked.	
  * @methods:
-		construct
-		set's and get's for each attribute
-		toString(): transforms an object to well formated string with the attributes
+		construct: Constructor of the series object.
+		accessors: Getters and setters of the class attributes.
+		validate:  Validate de required fields for any error.
+		toString:  Transforms an object to well formated string with the attributes.
 */
 
 function commentObj () {
@@ -50,6 +51,48 @@ function commentObj () {
 	this.getPositiveVotes = function () { return this.positiveVotes; }
 	this.getNegativeVotes = function () { return this.negativeVotes; }
 	
+	// Other methods
+	this.validate = function () {
+		var errors = new Array();
+		
+		// commentId
+		try {
+			if (this.getCommentId().length == 0) {
+				errors.push("Comment ID must be informed.");
+			}
+		} catch (e) {
+			errors.push("Comment ID must be informed.");
+		}
+		
+		// userId
+		try {
+			if (this.getUserId().length == 0) {
+				errors.push("User ID must be informed.");
+			}
+		} catch (e) {
+			errors.push("User ID must be informed.");
+		}
+
+		// referenceId
+		try {
+			if (this.getReferenceId().length == 0) {
+				errors.push("Reference ID must be informed.");
+			}
+		} catch (e) {
+			errors.push("Reference ID must be informed.");
+		}
+
+		// content
+		try {
+			if (this.getContent().length == 0) {
+				errors.push("Content must be informed.");
+			}
+		} catch (e) {
+			errors.push("Content must be informed.");
+		}
+		
+		return errors;
+	}
 	
 	this.toString = function (){
 		var commentString ="COMMENT_ID=" + this.getCommentId();
