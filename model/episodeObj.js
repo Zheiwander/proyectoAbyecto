@@ -2,7 +2,7 @@
  * @author: Andreu Ferré & Ismael Gómez
  * @date: 22/02/2016
  * @description: Object episode
- * @Attributes:
+ * @attributes:
 		episodeId:     ID of the episode.
 		seriesId:      ID of the series that containing this episode.
 		episodeNumber: Season and number of the episode.
@@ -12,6 +12,7 @@
  * @methods:
 		construct: Constructor of the episode object.
 		accessors: Getters and setters of the class attributes.
+		validate:  Validate de required fields for any error.
 		toString:  Transforms an object to well formated string with the attributes.
  */
 

@@ -2,8 +2,20 @@
  * @author: Andreu Ferré & Ismael Gómez
  * @date: 22/02/2016
  * @description: Object series
- * @Attributes:
-
+ * @attributes:
+		seriesId:       ID of the series.
+		seriesName:     Name of the series.
+		rating:         Rating of the series.
+		actors:         Array of actors (actorId) who appear in the series.
+		episodes:       Array of episodes (episodeId) of this series.
+		usersFollowing: Array of users (userId) that are following the series.
+		releaseYear:    Year in which the series premiered.
+		synopsis:       Description of the series.
+ * @methods:
+		construct: Constructor of the series object.
+		accessors: Getters and setters of the class attributes.
+		validate:  Validate de required fields for any error.
+		toString:  Transforms an object to well formated string with the attributes.
  */
 
 function seriesObj () {
