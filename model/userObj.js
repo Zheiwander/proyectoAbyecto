@@ -1,165 +1,121 @@
-/* @userObj()
- * @author: Irene Blanco Fabregat	
- * @date: 02/02/2015
- * @description: Object review
- * @Attributes:
- * 		id: id for the reservation
-		name: first name for the reservation
-		surname: last name for the reservation
-		firstAddress;
-		secondAddress;
-		city;
-		state;
-		postalCode;
-		numOfAdults;
-		numOfChildren;
-		phone;
-		email;
-		roomPreference;
-		checkInDate;
-		checkOutDate;
-		checkInTime;
-		checkOutTime;
-		specialInstructions;
+/** @userObj()
+ * @author: Andreu Ferré & Ismael Gómez	
+ * @date: 22/02/2016 
+ * @description: Comment object
+ * @attributes:
+		userId:   ID of the user.
+		userType: Type of user.
+		username: Name of the user that appears on the web.
+		password: Password of the user.
+		email:    Email of the user.
+		name:     Real name of the user.
+		surname:  Real surname of the user.
  * @methods:
- * 		construct
- * 		set's and get's foor each attribute
- * 		toString(): transforms an object to well formated string with the attributes
- * 
-*/
+		construct: Constructor of the series object.
+		accessors: Getters and setters of the class attributes.
+		validate:  Validate de required fields for any error.
+		toString:  Transforms an object to well formated string with the attributes.
+ */
 
-function userObj ()
-{
-	//Attributes declaration
-	this.userId;
-	this.userType;
-	this.surname;
-	this.password;
-	this.email;
+function userObj() {
+
+	// Attributes declaration
+	this.userId;   // Primary key, unique, not null
+	this.userType; // Not null
+	this.username; // Unique, not null
+	this.password; // Not null
+	this.email;    // Not null
 	this.name;
 	this.surname;
 	
-		
-	
-	//Methods declaration
-	this.construct = function (id,name,surname,firstAddress,secondAddress, city, state, postalCode, numOfAdults, numOfChildren, phone, email, roomPreference, checkInDate, checkOutDate, checkInTime, checkOutTime, specialRequests, specialInstructions)
-	{
-		this.setId(id);
+	// Constructor method
+	this.construct = function(userId, userType, username, password, email, name, surname) {
+		this.setUserId(userId);
+		this.setUserType(userType);
+		this.setUsername(username);
+		this.setPassword(password);
+		this.setEmail(email);
 		this.setName(name);
 		this.setSurname(surname);
-		this.setFirstAddress(firstAddress);
-		this.setSecondAddress(secondAddress);
-		this.setCity(city);
-		this.setState(state);
-		this.setPostalCode(postalCode);
-		this.setNumOfAdults(numOfAdults);
-		this.setNumOfChildren(numOfChildren);
-		this.setPhone(phone);
-		this.setEmail(email);
-		this.setRoomPreference(roomPreference);
-		this.setCheckInDate(checkInDate);
-		this.setCheckOutDate(checkOutDate);
-		this.setCheckInTime(checkInTime);
-		this.setCheckOutTime(checkOutTime);
-		this.setSpecialRequests(specialRequests);
-		this.setSpecialInstructions(specialInstructions);
+	}
+	
+	// Access methods
+	this.setUserId = function(userId) { this.userId = userId; }
+	this.setUserType = function(userType) { this.userType = userType; }
+	this.setUsername = function(username) { this.username = username; }
+	this.setPassword = function(password) { this.password = password; }
+	this.setEmail = function(email) { this.email = email; }
+	this.setName = function(name) { this.name = name; }
+	this.setSurname = function(surname) { this.surname = surname; }
 
-	}
+	this.getUserId = function() { return this.userId; }
+	this.getUserType = function() { return this.userType; }
+	this.getUsername = function() { return this.username; }
+	this.getPassword = function() { return this.password; }
+	this.getEmail = function() { return this.email; }
+	this.getName = function() { return this.name; }
+	this.getSurname = function() { return this.surname; }
 	
-	this.setId = function (id){this.id=id;}
-	this.setName = function (name){this.name=name;}
-	this.setSurname = function (surname){this.surname=surname;}
-	this.setFirstAddress = function (firstAddress){this.firstAddress=firstAddress;}
-	this.setSecondAddress = function (secondAddress){this.secondAddress=secondAddress;}
-	this.setCity = function (city){this.city=city;}
-	this.setState = function (state){this.state=state;}
-	this.setPostalCode = function (postalCode){this.postalCode=postalCode;}
-	this.setNumOfAdults = function (numOfAdults){this.numOfAdults=numOfAdults;}
-	this.setNumOfChildren = function (numOfChildren){this.numOfChildren=numOfChildren;}
-	this.setPhone = function (phone){this.phone=phone;}
-	this.setEmail = function (email){this.email=email;}
-	this.setRoomPreference = function (roomPreference){this.roomPreference=roomPreference;}
-	this.setCheckInDate = function (checkInDate){this.checkInDate=checkInDate;}
-	this.setCheckOutDate = function (checkOutDate){this.checkOutDate=checkOutDate;}
-	this.setCheckInTime = function (checkInTime){this.checkInTime=checkInTime;}
-	this.setCheckOutTime = function (checkOutTime){this.checkOutTime=checkOutTime;}
-	this.setSpecialRequests = function (specialRequests){this.specialRequests=specialRequests;}
-	this.setSpecialInstructions = function (specialInstructions){this.specialInstructions=specialInstructions;}
-	
-	this.addSpecialRequests = function (specialreq)
-	{
-		this.specialRequests.push(specialreq);
-	}
-	
-	this.removeSpecialRequests = function (specialreq)
-	{
-		for (var i = 0; i < this.getSpecialRequests().length; i++)
-		{
-			if(this.getSpecialRequests()[i]==specialreq)
-			{
-				this.specialRequests.splice(i,1);
-				break;
-			}		
-		}
-		
-	}
-	
-	this.getId = function () {return this.id;}
-	this.getName = function () {return this.name;}
-	this.getSurname = function () {return this.surname;}
-	this.getFirstAddress = function () {return this.firstAddress;}
-	this.getSecondAddress = function () {return this.secondAddress;}
-	this.getCity = function () {return this.city;}
-	this.getState = function () {return this.state;}
-	this.getPostalCode = function () {return this.postalCode;}
-	this.getNumOfAdults = function () {return this.numOfAdults;}
-	this.getNumOfChildren = function () {return this.numOfChildren;}
-	this.getPhone = function () {return this.phone;}
-	this.getEmail = function () {return this.email;}
-	this.getRoomPreference = function () {return this.roomPreference;}
-	this.getCheckInDate = function () {return this.checkInDate;}
-	this.getCheckOutDate = function () {return this.checkOutDate;}
-	this.getCheckInTime = function () {return this.checkInTime;}
-	this.getCheckOutTime = function () {return this.checkOutTime;}
-	this.getSpecialRequests = function () {return this.specialRequests;}
-	this.getSpecialInstructions = function () {return this.specialInstructions;}
-	
-	this.validate = function ()
-	{
+	// Other methods
+	this.validate = function() {
 		var errors = new Array();
-		
-		try
-		{
-			if(this.getName().length == 0 || this.getName().match(/^[A-ZÑ][a-zA-Zñá-ú\s]+$/)==null)
-			{
-				errors.push("Name must be informed and contain only letters");
+
+		// userId
+		try {
+			if (this.getUserId().length == 0) {
+				errors.push("User ID must be informed.");
 			}
+		} catch (e) {
+			errors.push("User ID must be informed.");
 		}
-		catch(e) {
-			errors.push("Name must be informed and contain only letters");
-		}
-		
-		try
-		{
-			if(this.getSurname().length == 0)
-			{
-				errors.push("Surname must be informed and contain only letters");
+
+		// userType
+		try {
+			if (this.getUserType() != "basic" && this.getUserType != "admin") {
+				errors.push("User type only can be 'basic' or 'advanced'.");
 			}
+		} catch (e) {
+			errors.push("User type only can be 'basic' or 'advanced'.");
 		}
-		catch(e) {
-			errors.push("Surname must be informed and contain only letters");
+
+		// username
+		try {
+			if (this.getUsername().length == 0) {
+				errors.push("Username must be informed.");
+			}
+		} catch (e) {
+			errors.push("Username must be informed.");
+		}
+
+		// password
+		try {
+			if (this.getPassword().length == 0) {
+				errors.push("Password must be informed.");
+			}
+		} catch (e) {
+			errors.push("Password must be informed.");
+		}
+
+		// email
+		try {
+			if (this.getEmail().length == 0 || this.getEmail().match(/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/) == null) {
+				errors.push("Email must be correctly informed.");
+			}
+		} catch (e) {
+			errors.push("Email must be correctly informed.");
 		}
 		
 		return errors;
 	}
 	
 	this.toString = function (){
-		var reservationString ="RESERVATION - ID="+this.getId()+" FIRST NAME="+this.getName()+" LAST NAME="+this.getSurname();
-		reservationString +=" FIRST ADDRESS="+this.getFirstAddress()+" SECOND ADDRESS="+this.getSecondAddress()+" CITY="+this.getCity();
-		reservationString +=" STATE="+this.getState()+" POSTAL CODE="+this.getPostalCode()+" ADULTS="+this.getNumOfAdults();
-		reservationString +=" CHILDREN="+this.getNumOfChildren()+" PHONE="+this.getPhone()+" EMAIL="+this.getEmail();
-		reservationString +=" ROOM PREF="+this.getRoomPreference()+" CHECK IN DATE="+this.getCheckInDate()+" CHECK OUT DATE="+this.getCheckOutDate();
-		reservationString +=" CHECK IN TIME="+this.getCheckInTime()+" CHECK OUT TIME="+this.getCheckOutTime()+" SPECIAL REQ="+this.getSpecialRequests()+" SPECIAL INS="+this.getSpecialInstructions();
-		return reservationString;		
+		var userString = "USER_ID=" + this.getUserId();
+		userString += " USER_TYPE=" + this.getUserType();
+		userString += " USERNAME=" + this.getUsername();
+		userString += " PASSWORD=" + this.getPassword();
+		userString += " EMAIL=" + this.getEmail();
+		userString += " NAME=" + this.getName();
+		userString += " SURNAME=" + this.getSurname();
+		return userString;		
 	}
 }

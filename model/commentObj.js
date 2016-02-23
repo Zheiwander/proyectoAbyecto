@@ -14,9 +14,9 @@
 		accessors: Getters and setters of the class attributes.
 		validate:  Validate de required fields for any error.
 		toString:  Transforms an object to well formated string with the attributes.
-*/
+ */
 
-function commentObj () {
+function commentObj() {
 
 	// Attributes declaration
 	this.commentId;     // Primary key, unique, not null

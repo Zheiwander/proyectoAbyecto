@@ -16,7 +16,7 @@
 		toString:  Transforms an object to well formated string with the attributes.
  */
 
-function episodeObj () {
+function episodeObj() {
 
 	// Attributes declaration
 	this.episodeId;     // Primary key, unique, not null
@@ -27,7 +27,7 @@ function episodeObj () {
 	this.releaseDate;
 	
 	// Constructor method
-	this.construct = function (episodeId, seriesId, episodeNumber, rating, episodeName, releaseDate) {
+	this.construct = function(episodeId, seriesId, episodeNumber, rating, episodeName, releaseDate) {
 		this.setEpisodeId(episodeId);
 		this.setSeriesId(seriesId);
 		this.setEpisodeNumber(episodeNumber);
@@ -52,7 +52,7 @@ function episodeObj () {
 	this.getReleaseDate = function() { return this.releaseDate; }
 	
 	// Other methods
-	this.validate = function () {
+	this.validate = function() {
 		var errors = new Array();
 		
 		// episodeId
@@ -85,7 +85,7 @@ function episodeObj () {
 		return errors;
 	}
 	
-	this.toString = function (){
+	this.toString = function() {
 		var episodeString ="EPISODE_ID=" + this.getEpisodeId();
 		episodeString += " SERIES_ID=" + this.getSeriesId();
 		episodeString += " EPISODE_NUMBER=" + this.getEpisodeNumber();

@@ -18,7 +18,7 @@
 		toString:  Transforms an object to well formated string with the attributes.
  */
 
-function seriesObj () {
+function seriesObj() {
 
 	// Attributes declaration
 	this.seriesId;            // Primary key, unique, not null
@@ -31,7 +31,7 @@ function seriesObj () {
 	this.synopsis;
 	
 	// Constructor method
-	this.construct = function (seriesId, seriesName, rating, actors, episodes, usersFollowing, releaseYear, synopsis) {
+	this.construct = function(seriesId, seriesName, rating, actors, episodes, usersFollowing, releaseYear, synopsis) {
 		this.setSeriesId(seriesid);
 		this.setSeriesName(seriesName);
 		this.setRating(rating);
@@ -43,29 +43,29 @@ function seriesObj () {
 	}
 
 	// Access methods
-	this.setSeriesId = function (seriesId) { this.seriesId = seriesId; }
-	this.setSeriesName = function (seriesName) { this.seriesName = seriesName; }
-	this.setRating = function (rating) { this.rating = rating; }
-	this.setActors = function (actors) { this.actors = actors; }
-	this.setEpisodes = function (episodes) { this.episodes = episodes; }
-	this.setUsersFollowing = function (usersFollowing) { this.usersFollowing = usersFollowing; }
-	this.setReleaseYear = function (releaseYear) { this.releaseYear = releaseYear; }
-	this.setSynopsis = function (synopsis) { this.synopsis = synopsis; }
+	this.setSeriesId = function(seriesId) { this.seriesId = seriesId; }
+	this.setSeriesName = function(seriesName) { this.seriesName = seriesName; }
+	this.setRating = function(rating) { this.rating = rating; }
+	this.setActors = function(actors) { this.actors = actors; }
+	this.setEpisodes = function(episodes) { this.episodes = episodes; }
+	this.setUsersFollowing = function(usersFollowing) { this.usersFollowing = usersFollowing; }
+	this.setReleaseYear = function(releaseYear) { this.releaseYear = releaseYear; }
+	this.setSynopsis = function(synopsis) { this.synopsis = synopsis; }
 
-	this.addUsersFollowing = function (userId) {
+	this.addUsersFollowing = function(userId) {
 		this.specialRequests.push(userId);
 	}
 
-	this.getSeriesId = function () { return this.seriesId; }
-	this.getSeriesName = function () { return this.seriesName; }
-	this.getRating = function () { return this.rating; }
-	this.getActors = function () { return this.actors; }
-	this.getEpisodes = function () { return this.episodes; }
-	this.getUsersFollowing = function () { return this.usersFollowing; }
-	this.getReleaseYear = function () { return this.releaseYear; }
-	this.getSynopsis = function () { return this.synopsis; }
+	this.getSeriesId = function() { return this.seriesId; }
+	this.getSeriesName = function() { return this.seriesName; }
+	this.getRating = function() { return this.rating; }
+	this.getActors = function() { return this.actors; }
+	this.getEpisodes = function() { return this.episodes; }
+	this.getUsersFollowing = function() { return this.usersFollowing; }
+	this.getReleaseYear = function() { return this.releaseYear; }
+	this.getSynopsis = function() { return this.synopsis; }
 
-	this.removeUsersFollowing = function (userId) {
+	this.removeUsersFollowing = function(userId) {
 		for (var i = 0; i < this.getUsersFollowing().length; i++) {
 			if (this.getUsersFollowing()[i] == userId) {
 				this.usersFollowing.splice(i, 1);
@@ -75,7 +75,7 @@ function seriesObj () {
 	}
 	
 	// Other methods
-	this.validate = function () {
+	this.validate = function() {
 		var errors = new Array();
 		
 		// seriesId
@@ -99,7 +99,7 @@ function seriesObj () {
 		return errors;
 	}
 	
-	this.toString = function (){
+	this.toString = function() {
 		var seriesString = "SERIES_ID=" + this.getSeriesId();
 		seriesString += " SERIES_NAME=" + this.getSeriesName();
 		seriesString += " RATING=" + this.getRating();
