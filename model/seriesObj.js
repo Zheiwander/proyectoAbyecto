@@ -21,8 +21,8 @@
 function seriesObj () {
 
 	// Attributes declaration
-	this.seriesId;            // Primary key, unique, no null
-	this.seriesName;          // No null
+	this.seriesId;            // Primary key, unique, not null
+	this.seriesName;          // Not null
 	this.rating;              // Not used yet
 	this.actors = [];         // Not used yet
 	this.episodes = [];

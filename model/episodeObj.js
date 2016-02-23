@@ -19,8 +19,8 @@
 function episodeObj () {
 
 	// Attributes declaration
-	this.episodeId;     // Primary key, unique, no null
-	this.seriesId;      // Foreign key, unique, no null
+	this.episodeId;     // Primary key, unique, not null
+	this.seriesId;      // Foreign key, unique, not null
 	this.episodeNumber; // Unique, no null
 	this.rating;        // Not used yet
 	this.episodeName;
