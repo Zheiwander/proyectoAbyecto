@@ -40,7 +40,8 @@
 
         	if (position != -1) {
         		if (this.password == usersArray[position].getPassword()) {
-        			// llamar a funcion coockie
+        			this.createCookieSession(usersArray[position]);
+        			window.location.href = "html/main.html";
         		} else {
         			// password incorrecto
         		}
@@ -50,30 +51,13 @@
 
         }
 		
-		/*this.createCookie = function () {
-			var cookieNumber = 0;
+		this.createCookieSession = function (user) {
 			
-			if ($cookies.get($scope.generalName) != undefined) {
-				cookieNumber = $cookies.get($scope.generalName);
-			}
-			
-			for (var i = 0; i < this.productsArray.length; i++){
-				if ($("#cbxbuy" + i).is(":checked")) {
-					$.cookie($scope.generalName+cookieNumber, this.productsArray[i].toCookie(), {path:$scope.path});
-					cookieNumber++;
-				}
-			}
-
-			$cookies.put($scope.generalName, cookieNumber, {path:$scope.path});
-			
-			this.product = new productObj();
-			$scope.formExample.$setPristine();
-			
-			alert("Product correctly isnerted");
+			$cookies.put($scope.generalName + "User", user.toCookie(), {path:$scope.path});
 			
 		}
 		
-		this.showCookies = function () {
+		/*this.showCookies = function () {
 			var cookieNumber = 0;
 			
 			if($cookies.get($scope.generalName)!=undefined) {
