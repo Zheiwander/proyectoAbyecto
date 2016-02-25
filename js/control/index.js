@@ -43,7 +43,7 @@
         			this.createCookieSession(usersArray[position]);
         			window.location.href = "html/main.html";
         		} else {
-        			// password incorrecto
+        			$("#messageBox").show();
         		}
         	} else {
         		// usuario no encontrado
