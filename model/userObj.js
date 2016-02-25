@@ -107,6 +107,18 @@ function userObj() {
 		
 		return errors;
 	}
+
+	this.toCookie = function () {
+		var cookieString = "user_id=" + this.getUserId();
+		cookieString += ":user_type=" + this.getUserType();
+		cookieString += ":username=" + this.getUsername();
+		cookieString += ":password=" + this.getPassword();
+		cookieString += ":email=" + this.getEmail();
+		cookieString += ":name=" + this.getName();
+		cookieString += ":surname=" + this.getSurname();
+		
+		return cookieString;		
+	}
 	
 	this.toString = function (){
 		var userString = "USER_ID=" + this.getUserId();
