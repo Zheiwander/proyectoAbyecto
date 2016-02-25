@@ -32,31 +32,33 @@
 	<script type="text/javascript" src="js/frameworks/jquery/jquery-1.12.1.min.js"></script>
 	<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.js"></script>
 	<script type="text/javascript" rel="stylesheet" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="js/frameWorks/angular/cookies/angular-cookies.js" type="text/javascript" xml:space="preserve"></script>
+	<script type="text/javascript" rel="stylesheet" src="js/model/userObj.js"></script>
 	<script type="text/javascript" rel="stylesheet" src="js/control/index.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">	
-	<link rel="stylesheet" type="text/css" href="css/login.css">	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/login.css" />
 </head>
-<body class="container" ng-init="loginCtrl.loadMainData()" ng-controller="loginCtrl as loginCtrl">
+<body class="container" ng-controller="loginCtrl as logCtrl" ng-init="logCtrl.loadMainData()">
 		<div>
 			<div>
 				<h1>Micenas</h1>
 				<div class="jumbotron" >
 					<div class="input-group">
-						<form class="">
+						<form class="" ng-submit="logCtrl.doLogin()">
 							<div class="form-group">
 								<label for="loginInput">Login</label>
-								<input type="text" class="form-control" id="loginInput" placeholder="Your Login Here">
+								<input type="text" class="form-control" id="loginInput" ng-model="logCtrl.username" placeholder="Your Login Here">
 							  </div>
 							  <div class="form-group">
 								<label for="passwordInput">Password</label>
-								<input type="password" class="form-control" id="passwordInput" placeholder="Your Password Here">
+								<input type="password" class="form-control" id="passwordInput" ng-model="logCtrl.password" placeholder="Your Password Here">
 							  </div>
-							  <button type="submit" class="btn btn-success">Login</button>
+							  <button class="btn btn-success">Login</button>
 							</form>
 						</form>
 					</div>
 				</div>
-				<div hidden class="container" id="messageBox"></div>
+				<div ng-if="logCtrl.error.length > 0" class="container" id="messageBox">{{logCtrl.error}}</div>
 			</div>
 		</div>
 </body>
