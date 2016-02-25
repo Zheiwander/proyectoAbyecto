@@ -24,7 +24,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
 <head>
 	<title>Index Series</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
@@ -36,23 +35,27 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">	
 	<link rel="stylesheet" type="text/css" href="css/login.css">	
 </head>
-
 <body class="container" >
 		<div>
 			<div>
 				<h1>Micenas</h1>
 				<div class="jumbotron" >
 					<div class="input-group">
-						<form role="form">
+						<form class="">
 							<div class="form-group">
-							Login:<input type="text" class="form-control"/><br/>
-							Password:<input type="password" class="form-control"/>
-							</div>
+								<label for="loginInput">Login</label>
+								<input type="text" class="form-control" id="loginInput" placeholder="Your Login Here">
+							  </div>
+							  <div class="form-group">
+								<label for="passwordInput">Password</label>
+								<input type="password" class="form-control" id="passwordInput" placeholder="Your Password Here">
+							  </div>
+							  <button type="submit" class="btn btn-success">Login</button>
+							</form>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 </body>
-
 </html>
