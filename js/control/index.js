@@ -13,6 +13,7 @@
 		// Scope variables
 		$scope.generalName = "maecenas";
 		$scope.path = "/";
+		$scope.showAction=1;
 
 		this.loadMainData = function () {
 
@@ -56,13 +57,37 @@
         	}
 
         }
+        this.validateRegistration = function() {
+			var allOk = true;
+			
+			if (this.register.email().match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/) == null) {
+				this.register.emailErrorText = "Please enter a valid email";
+				allOk = false;
+			}
+			if (allOk) {
+				this.registrationList.push(this.registration);
+				this.user = new userObj();
+				$scope.registerManagement.$setPristine();
+			}
+		}
 		
 		this.createCookieSession = function (user) {
 			
 			$cookies.put($scope.generalName + "User", user.toCookie(), {path:$scope.path});
 			
 		}
-		
+
+	});
+
+		seriesApp.directive("registerForm", function (){
+		return {
+		  restrict: 'E',
+		  templateUrl:"view/templates/register-form.html",
+		  controller:function(){
+		  },
+		  controllerAs: 'registerForm'
+		};
 	});
 	
 })();
+

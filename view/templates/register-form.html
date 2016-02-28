@@ -1,0 +1,48 @@
+		<form class="login2" name="registerManagement" ng-submit="registerManagement.$valid && logCtrl.validateRegistration()"  novalidate>
+			<div class="container well">
+				<div class="form-horizontal" >
+					<div class="row">
+						<div class="col-xs-12"><h2>Register on Maecenas</h2></div>
+					</div>
+					<br/>
+
+					<div class="form-group">
+							
+						<label class="label label-default col-sm-12" for="formGroup">Username *</label>
+						<div class="col-sm-12">
+							<input type="text"class="form-control focusedInput" id="registerUsername" ng-model="logCtrl.register.username" required />	
+						</div>
+						<br/>
+						<label class="label label-default col-sm-12" for="formGroup">Password *</label>
+						<div class="col-sm-12">
+							<input type="password" ng-model="logCtrl.register.password" class="form-control focusedInput"  id="registerPassword"  required />
+						</div>
+						<br/>
+						<label class="label label-default col-sm-12" for="formGroup">E-Mail </label>
+						<div class="col-sm-12">
+							<input class="form-control focusedInput" type="email"  ng-model="logCtrl.register.email"   id="registerEmail"  />
+						</div>
+						<br/>
+						<label class="label label-default col-sm-12" for="formGroup">Name *</label>
+						<div class="col-sm-12">
+							<input class="form-control focusedInput" type="text"  ng-model="logCtrl.register.name"  id="registerName"  required /> 
+						</div>
+						<br/>	
+						<label class="label label-default col-sm-12" for="formGroup">SurName *</label>
+						<div class="col-sm-12">
+							<input class="form-control focusedInput" type="text"  ng-model="logCtrl.register.surname"  id="registerSurname"  required /> 
+						</div>
+						
+						<div class="col-sm-4">
+							<button class="btn btn-success" ng-disabled="registerManagement.$invalid || !validateRegistration">
+								Submit
+							</button>
+						</div>
+						<div class="form-group col-sm-6">
+							<label>
+								<input class="btn btn-default btn-primary btn-block" type="button" value="Back" ng-click="showAction = 1" > 
+							</label>
+						</div>
+				</div>
+			</div>
+		</form>
