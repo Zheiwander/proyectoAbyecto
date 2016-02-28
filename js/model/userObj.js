@@ -3,18 +3,18 @@
  * @date: 22/02/2016 
  * @description: Comment object
  * @attributes:
-		userId:   ID of the user.
-		userType: Type of user.
-		username: Name of the user that appears on the web.
-		password: Password of the user.
-		email:    Email of the user.
-		name:     Real name of the user.
-		surname:  Real surname of the user.
+		userId   : ID of the user.
+		userType : Type of user.
+		username : Name of the user that appears on the web.
+		password : Password of the user.
+		email    : Email of the user.
+		name     : Real name of the user.
+		surname  : Real surname of the user.
  * @methods:
-		construct: Constructor of the series object.
-		accessors: Getters and setters of the class attributes.
-		validate:  Validate de required fields for any error.
-		toString:  Transforms an object to well formated string with the attributes.
+		construct : Constructor of the series object.
+		accessors : Getters and setters of the class attributes.
+		validate  : Validate de required fields for any error.
+		toString  : Transforms an object to well formated string with the attributes.
  */
 
 function userObj() {
@@ -112,7 +112,7 @@ function userObj() {
 		var cookieString = "user_id=" + this.getUserId();
 		cookieString += ":user_type=" + this.getUserType();
 		cookieString += ":username=" + this.getUsername();
-		cookieString += ":password=" + this.getPassword();
+		// cookieString += ":password=" + this.getPassword(); // Better if not shown in the cookie.
 		cookieString += ":email=" + this.getEmail();
 		cookieString += ":name=" + this.getName();
 		cookieString += ":surname=" + this.getSurname();
