@@ -17,19 +17,21 @@
 	</head>
 	<body class="container" ng-controller="loginCtrl as logCtrl" ng-init="logCtrl.loadMainData()">
 		<div id="title"><img src="material/img/title.png" id="title"></div>
-		<div class="jumbotron" >
+		<div class="jumbotron">
 			<div class="input-group">
 				<form role="form" class="" ng-submit="logCtrl.doLogin()">
 					<div class="form-group">
 						<label for="loginInput">Login</label>
 						<input type="text" class="form-control" id="loginInput" ng-model="logCtrl.username" placeholder="Your Login Here">
-					  </div>
-					  <div class="form-group">
+					</div>
+					<div class="form-group">
 						<label for="passwordInput">Password</label>
 						<input type="password" class="form-control" id="passwordInput" ng-model="logCtrl.password" placeholder="Your Password Here">
-					  </div>
-					  <br /><button class="btn btn-success">Login</button>
-					</form>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-success">Login</button>
+						<input type="checkbox" id="remember" /> Remember me.
+					</div>
 				</form>
 			</div>
 		</div>
